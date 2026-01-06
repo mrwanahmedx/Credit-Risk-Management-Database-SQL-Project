@@ -1,12 +1,8 @@
--- =============================================
--- Credit Risk Database
--- database.sql
--- Contains tables, sample data, and basic data checks
--- =============================================
+-- Tables & Basic data
 
--- =============================================
+
 -- Drop tables if they exist
--- =============================================
+
 DROP TABLE IF EXISTS Payment_Schedule;
 DROP TABLE IF EXISTS Loan_Applications;
 DROP TABLE IF EXISTS Payments;
@@ -16,9 +12,8 @@ DROP TABLE IF EXISTS Credit_Scores;
 DROP TABLE IF EXISTS Accounts;
 DROP TABLE IF EXISTS Customers;
 
--- =============================================
+
 -- Creating the Tables
--- =============================================
 
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,
@@ -99,11 +94,9 @@ CREATE TABLE Risk_Assessment (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
--- =============================================
 -- Inserting sample data
--- =============================================
 
--- (50 customers)
+
 INSERT INTO Customers (CustomerID, FirstName, LastName, DOB, Email, Phone, Address) VALUES
 (1, 'Ahmed', 'Ali', '1985-06-15', 'ahmed.ali@email.com', '01012345678', 'Cairo, Egypt'),
 (2, 'Sara', 'Hassan', '1990-11-02', 'sara.hassan@email.com', '01023456789', 'Giza, Egypt'),
