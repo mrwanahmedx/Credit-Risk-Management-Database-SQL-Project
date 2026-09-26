@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-26 — privacy and repository-hygiene pass
+
+- Replaced realistic-looking synthetic customer identifiers with deterministic fictional placeholders while preserving keys and analytical behavior.
+- Added `PUBLIC_DATA_BOUNDARY.md` as a hard clean-room rule for future contributions.
+- Moved the superseded data-cleaning script to `archive/`; `data_quality_checks.sql` remains the canonical release gate.
+
+
 ## 2026-09-26 — data contract and release-gate pass
 
 ### Added
