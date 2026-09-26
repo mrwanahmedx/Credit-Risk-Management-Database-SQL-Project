@@ -55,11 +55,12 @@ produce analytical output
 | `database.sql` | schema plus simulated seed data |
 | `sample_queries.sql` | grain-controlled analytical queries |
 | `data_quality_checks.sql` | canonical data-quality and reconciliation release gates |
-| `-- data_cleaning_exploration.sql` | retained legacy predecessor to the canonical quality file |
+| `archive/legacy_data_cleaning_exploration.sql` | retained legacy predecessor; excluded from the active execution path |
 | `docs/DATA_CONTRACT.md` | explicit source grains, keys, join rules and release conditions |
 | `docs/ARCHITECTURE.md` | risk-data engineering flow and design rationale |
 | `docs/RECONCILIATION.md` | hard/soft reconciliation standards |
 | `.github/workflows/sql-ci.yml` | executable SQLite smoke test |
+| `PUBLIC_DATA_BOUNDARY.md` | hard clean-room / confidentiality rules |
 | `CHANGELOG.md` | material engineering and schema fixes |
 
 ## Engineering controls
@@ -116,7 +117,7 @@ This repository was built as a clean-room public project. It does not use or rep
 
 ## Limitations
 
-- simulated dataset designed for portfolio demonstration,
+- simulated dataset designed for portfolio demonstration; customer identity fields use unmistakably fictional placeholders,
 - not a production underwriting database,
 - no real customer or employer data,
 - limited scale relative to a banking production environment,
