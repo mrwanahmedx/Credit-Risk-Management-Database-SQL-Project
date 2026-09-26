@@ -1,8 +1,8 @@
 # Credit Risk Management Database
 
-Relational SQL portfolio project built around banking-style customer, account, loan, payment, repayment-schedule, credit-score, and risk-assessment data.
+**Synthetic credit-risk data engineering in SQL: grain contracts, fan-out prevention, reconciliation gates, deterministic latest-state logic, and executable CI.**
 
-The current version emphasizes **analytical correctness and data-engineering discipline** rather than simply demonstrating joins.
+This clean-room portfolio project uses only simulated data and generic banking concepts. It contains no employer/customer data, internal schemas, or production policy logic.
 
 ## What this project is designed to show
 
@@ -54,7 +54,11 @@ produce analytical output
 | --- | --- |
 | `database.sql` | schema plus simulated seed data |
 | `sample_queries.sql` | grain-controlled analytical queries |
-| `-- data_cleaning_exploration.sql` | data-quality and reconciliation pack |
+| `data_quality_checks.sql` | canonical data-quality and reconciliation release gates |
+| `-- data_cleaning_exploration.sql` | retained legacy predecessor to the canonical quality file |
+| `docs/DATA_CONTRACT.md` | explicit source grains, keys, join rules and release conditions |
+| `docs/ARCHITECTURE.md` | risk-data engineering flow and design rationale |
+| `docs/RECONCILIATION.md` | hard/soft reconciliation standards |
 | `.github/workflows/sql-ci.yml` | executable SQLite smoke test |
 | `CHANGELOG.md` | material engineering and schema fixes |
 
@@ -84,12 +88,16 @@ The repository includes queries for:
 - multiple-active-loan detection,
 - source and output reconciliation.
 
+## Data contract and reconciliation
+
+The project now declares its source grains and join rules explicitly in [the data contract](docs/DATA_CONTRACT.md). The [reconciliation standard](docs/RECONCILIATION.md) separates hard release gates from soft portfolio reconciliations.
+
 ## Data quality
 
 The CI workflow executes the database end-to-end in SQLite:
 
 1. build schema and seed data,
-2. execute the quality / reconciliation pack,
+2. execute `data_quality_checks.sql`,
 3. execute the engineered analytical queries.
 
 The CI work already exposed and led to fixes for historical schema/seed mismatches such as `DaysLate`, `RequestedAmount`, and `ScoreDate / CreditScore`.
@@ -101,6 +109,10 @@ The CI work already exposed and led to fixes for historical schema/seed mismatch
 - window functions
 - relational modeling
 - GitHub Actions CI
+
+## Confidentiality boundary
+
+This repository was built as a clean-room public project. It does not use or reproduce employer data, employer code, internal table/column names, customer records, internal model parameters, or proprietary banking workflows.
 
 ## Limitations
 
