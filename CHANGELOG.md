@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-09-26 — data contract and release-gate pass
+
+### Added
+
+- Canonical `data_quality_checks.sql` release-gate entry point.
+- Explicit source-grain and join contract in `docs/DATA_CONTRACT.md`.
+- Architecture documentation for grain-safe risk-data engineering.
+- Hard-versus-soft reconciliation standard.
+
+### Changed
+
+- CI now executes the canonical data-quality file.
+- README now leads with engineering controls and an explicit clean-room confidentiality boundary.
+- The historical `-- data_cleaning_exploration.sql` file is retained as a legacy predecessor rather than deleted.
+
 ## 2026-09-26
 
 ### Fixed
