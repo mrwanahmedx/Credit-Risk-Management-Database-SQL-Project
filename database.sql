@@ -239,7 +239,7 @@ INSERT INTO Payments (PaymentID, LoanID, PaymentDate, PaymentAmount) VALUES
 (18, 13, '2021-02-22', 500.00),
 (19, 15, '2021-09-15', 150.00);
 
-INSERT INTO Payment_Schedule (ScheduleID, LoanID, DueDate, DueAmount, PaidDate, PaidAmount, LateDays) VALUES
+INSERT INTO Payment_Schedule (ScheduleID, LoanID, DueDate, DueAmount, PaidDate, PaidAmount, DaysLate) VALUES
 (1, 1, '2021-03-15', 500.00, '2021-03-15', 500.00, 0),
 (2, 1, '2021-04-15', 500.00, '2021-04-15', 500.00, 0),
 (3, 1, '2021-05-15', 500.00, '2021-05-17', 500.00, 2),
