@@ -17,6 +17,6 @@ jobs:
       - name: Build schema and seed data
         run: sqlite3 credit_risk_ci.db < database.sql
       - name: Run data-quality and reconciliation pack
-        run: sqlite3 credit_risk_ci.db < "./-- data_cleaning_exploration.sql"
+        run: sqlite3 credit_risk_ci.db < data_quality_checks.sql
       - name: Run engineered analytical queries
         run: sqlite3 credit_risk_ci.db < sample_queries.sql
