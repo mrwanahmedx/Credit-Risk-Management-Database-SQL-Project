@@ -239,7 +239,7 @@ INSERT INTO Payments (PaymentID, LoanID, PaymentDate, PaymentAmount) VALUES
 (18, 13, '2021-02-22', 500.00),
 (19, 15, '2021-09-15', 150.00);
 
-INSERT INTO Payment_Schedule (ScheduleID, LoanID, DueDate, DueAmount, PaidDate, PaidAmount, LateDays) VALUES
+INSERT INTO Payment_Schedule (ScheduleID, LoanID, DueDate, DueAmount, PaidDate, PaidAmount, DaysLate) VALUES
 (1, 1, '2021-03-15', 500.00, '2021-03-15', 500.00, 0),
 (2, 1, '2021-04-15', 500.00, '2021-04-15', 500.00, 0),
 (3, 1, '2021-05-15', 500.00, '2021-05-17', 500.00, 2),
@@ -253,7 +253,7 @@ INSERT INTO Payment_Schedule (ScheduleID, LoanID, DueDate, DueAmount, PaidDate, 
 (11, 14, '2021-01-05', 350.00, '2021-01-20', 350.00, 15),
 (12, 14, '2021-02-05', 350.00, NULL, 0.00, 50);
 
-INSERT INTO Loan_Applications (ApplicationID, CustomerID, ApplicationDate, LoanType, Amount, Status, RejectionReason) VALUES
+INSERT INTO Loan_Applications (ApplicationID, CustomerID, ApplicationDate, LoanType, RequestedAmount, Status, RejectionReason) VALUES
 (1, 1, '2021-01-10', 'Personal', 15000.00, 'Approved', NULL),
 (2, 2, '2021-01-15', 'Car', 8000.00, 'Approved', NULL),
 (3, 3, '2020-12-20', 'Personal', 20000.00, 'Rejected', 'Low credit score'),
@@ -265,7 +265,7 @@ INSERT INTO Loan_Applications (ApplicationID, CustomerID, ApplicationDate, LoanT
 (9, 25, '2019-08-05', 'Car', 9000.00, 'Rejected', 'Unstable employment'),
 (10, 28, '2020-12-20', 'Personal', 4000.00, 'Rejected', 'High debt-to-income ratio');
 
-INSERT INTO Credit_Scores (CustomerID, Date, Score) VALUES
+INSERT INTO Credit_Scores (CustomerID, ScoreDate, CreditScore) VALUES
 (1, '2020-01-01', 720),
 (1, '2021-01-01', 735),
 (1, '2022-01-01', 750),
