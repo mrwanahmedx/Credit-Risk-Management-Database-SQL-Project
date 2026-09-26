@@ -5,6 +5,8 @@
 ### Fixed
 
 - Corrected the `Payment_Schedule` insert column from `LateDays` to the schema-defined `DaysLate`.
+- Corrected `Loan_Applications.Amount` in seed inserts to the schema-defined `RequestedAmount`.
+- Corrected `Credit_Scores.Date` / `Score` in seed inserts to `ScoreDate` / `CreditScore`.
 
 ### Changed
 
