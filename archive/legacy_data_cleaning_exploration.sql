@@ -1,3 +1,6 @@
+-- ARCHIVED PREDECESSOR. The canonical release gate is ../data_quality_checks.sql.
+-- Retained only for project history; do not use as the active QA entry point.
+
 -- ============================================================
 -- DATA QUALITY / RECONCILIATION PACK
 -- Credit Risk Management Database
